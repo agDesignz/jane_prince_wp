@@ -1,0 +1,36 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.box-item {
+  display: grid;
+  gap: v.$gap-sm;
+
+  @include m.bp-md {
+    border: 2px solid v.$color-primary;
+    padding: v.$gap-sm;
+    box-shadow: v.$shadow-medium;
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+
+  &--thirds {
+    @include m.bp-md {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &__compartment {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  &__heading {
+  color: v.$color-primary-dark;
+  font-weight: 600;
+  }
+
+  &__subheading {
+  color: v.$color-primary-dark;
+  font-weight: 500;
+  }
+}

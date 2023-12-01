@@ -1,0 +1,55 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.btn {
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: auto;
+    padding: .5rem 1.5rem;
+    display: inline-block;
+    font-weight: 500;
+    transition: all .24s ease-out;
+    box-shadow: v.$shadow-light;
+
+        &:hover,
+        &:active {
+          transform: scale(1.02);
+          box-shadow: v.$shadow-medium;
+        }
+  }
+
+  &--stretch {
+    justify-self: stretch;
+  }
+
+  &--green {
+    background-color: v.$color-secondary-dark;
+    color: v.$color-white;
+  }
+
+  &--white {
+    background-color: v.$color-white;
+    color: v.$color-secondary-dark;
+  }
+
+  &--blue {
+    color: v.$color-primary-dark;
+
+    &:hover,
+    &:active {
+      background-color: v.$color-primary;
+      color: v.$color-white;
+    }
+  }
+
+  &--center {
+    justify-self: center;
+    align-self: center;
+  }
+
+}

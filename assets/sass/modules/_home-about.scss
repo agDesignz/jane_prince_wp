@@ -1,0 +1,24 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.home-about {
+
+  &__content {
+    grid-row: 1 / span 1;
+
+    @include m.bp-md {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__image {
+    background: url(https://janeprince.local/wp-content/uploads/2023/09/jane-2-lg.jpg) no-repeat center 30%;
+    background-size: cover;
+    min-height:40rem;
+
+    @include m.bp-sm {
+      min-height: 45rem;
+    }
+
+  }
+}

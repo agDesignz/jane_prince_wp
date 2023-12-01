@@ -1,0 +1,47 @@
+/* COLORS */
+$color-primary: #3e4a82;
+$color-primary-light: #626D9E;
+$color-primary-lightest: #9199BE;
+$color-primary-dark: #232f67;
+$color-primary-darkest: #0d1848;
+
+$color-secondary: #6cac44;
+$color-secondary-light: #98D073;
+$color-secondary-lightest: #c0e8a6;
+$color-secondary-dark: #438d25;
+$color-secondary-darkest: #2e6609;
+
+
+$color-grey-light: #d4d8eb;
+$color-grey-lightest: #eff0f7;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-grey-dark: #242424;
+$color-grey-medium: #4e4a4a;
+
+$bg-primary: linear-gradient(45deg, $color-primary-dark, $color-primary);
+$bg-primary-dark: linear-gradient(25deg, $color-primary-darkest, $color-primary-dark);
+$bg-primary-light: linear-gradient(25deg, $color-primary-lightest, $color-grey-light);
+$bg-secondary: linear-gradient(25deg, $color-secondary-dark, $color-secondary);
+$bg-secondary-dark: linear-gradient(25deg, $color-secondary-darkest, $color-secondary-dark);
+
+/* SIZES */
+
+/* FONTS */
+
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: 'Lato', sans-serif;
+
+/* BOX - SHADOW */
+$shadow-dark: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+$shadow-medium: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+$shadow-light: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+/* SPACING */
+$gap-lg: 8rem;
+$gap-md: 5rem;
+$gap-sm: 2.5rem;
+
+$p-sm: 2.5rem;
+
+$full-width: 92%;

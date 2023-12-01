@@ -1,0 +1,32 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.header-box {
+    /* display: grid;
+    grid-template-rows: auto auto; */
+    color: v.$color-primary-dark;
+    background: v.$bg-primary-light;
+    height: 100%;
+    width: 100%;
+
+    @include m.bp-md {
+      /* grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr; */
+    }
+
+    &__content {
+      display: grid;
+      align-content: center;
+      grid-template-rows: auto auto;
+      padding: 2.5rem;
+      gap: v.$gap-sm;
+      
+    }
+
+    &__heading {
+      
+      @include m.bp-md {
+        font-size: 4rem;
+      }
+    }
+}

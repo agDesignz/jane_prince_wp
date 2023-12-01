@@ -1,0 +1,26 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.header-posts {
+
+  &__container {
+    display: flex;
+    align-items: flex-end;
+    background-color: v.$color-primary;
+    // background: linear-gradient(rgba(v.$color-primary, .9), rgba(v.$color-primary, .9)), url(./assets/images/jane-group-4.jpg);
+    background-position: top center;
+    background-size: cover;
+    min-height: 25vh;
+    padding: 3rem 0;
+    color: v.$color-white;
+
+    @include m.bp-md {
+      min-height: 35vh;
+    }
+
+    @include m.bp-md {
+      padding: 5rem 0;
+    }
+  }
+
+}

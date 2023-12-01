@@ -1,0 +1,12 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.accomplishments-buttons {
+  @include m.bp-sm {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include m.bp-md {
+    grid-template-columns: 1fr;
+  }
+}

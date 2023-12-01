@@ -1,0 +1,8 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.wrapper {
+  width: v.$full-width;
+  max-width: 114rem;
+  margin: auto;
+}

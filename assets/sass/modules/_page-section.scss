@@ -1,0 +1,20 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.page-section {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  @include m.bp-md {
+    padding: 15rem 0;
+  }
+
+  &--no-padding {
+    padding-top: 0;
+    padding-bottom: 0;  
+  }
+
+  &--top-padding {
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,18 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.home-feed {
+
+  &__container {
+    display: grid;
+    gap: v.$gap-sm;
+
+    @include m.bp-sm {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include m.bp-md {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

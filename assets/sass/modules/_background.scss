@@ -1,0 +1,24 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.background {
+
+  &--blue {
+    background: v.$bg-primary;
+    color: v.$color-white;
+  }
+
+  &--grey {
+    background-color: v.$color-grey-light;
+    color: v.$color-primary-dark;
+  }
+
+  &--white {
+    color: v.$color-primary-dark;
+  }
+
+  &--green {
+    background: v.$color-secondary-dark;
+    color: v.$color-white;
+  }
+}

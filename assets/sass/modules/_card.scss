@@ -1,0 +1,20 @@
+@use "../base/variables"as v;
+@use "../base/mixins"as m;
+
+.card {
+
+  &--p-medium {
+    padding: 2.5rem;
+    box-shadow: v.$shadow-light;
+  }
+
+  &--md {
+    @include m.bp-md {
+      border-radius: .8rem;
+    }
+  }
+
+  &--white {
+    background-color: v.$color-white;
+  }
+}
