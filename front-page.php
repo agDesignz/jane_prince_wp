@@ -1,4 +1,5 @@
 <?php
+  require_once get_template_directory() . '/inc/image-url.php'; 
   get_header();
 ?>
 
@@ -13,9 +14,7 @@
     <figure class="home-top__fig">
       <picture>
         <!-- <source srcset="assets/images/jane-portrait--lg.jpg" media="(min-width: 600px)"> -->
-        <img class="home-top__img"
-          src="https://janeprince.local/wp-content/uploads/2023/09/jane-portrait-lg-cropped.jpg"
-          alt="Portrait of Jane Prince">
+        <img class="home-top__img" src="<?php echo esc_url(get_theme_image_url('jane-portrait-lg-cropped.jpg')); ?>" alt="Portrait of Jane Prince">
       </picture>
     </figure>
   </div>
@@ -23,54 +22,20 @@
 </div>
 </header>
 
-<section class="page-section background--white">
+<section class="page-section page-section--top-padding background--white">
   <div class="grid">
     <div class="grid__item content-box content-box--narrow">
       <h2 class="home-about__title heading-secondary heading-secondary--larger">Citizen, Neighbor, Participant</h2>
       <p>Jane Prince has been an active resident of St. Paul’s Ward 7 since 1984 when she
-        and
-        her husband purchased
-        their family home in the Mounds Park neighborhood. Elected to St. Paul’s City Council in 2015, Jane
-        passionately
-        and effectively serves her neighbors in Ward 7’s diverse neighborhoods.</p>
+      and her husband purchased their family home in the Mounds Park neighborhood. Elected to St. Paul’s City Council in 2015, Jane passionately and effectively served her neighbors in Ward 7’s diverse neighborhoods until 2023. Now out of office, Jane's commitment to service and community continues as strong as ever.</p>
       <div class="">
-        <a href="#" class="btn btn--green">Learn more <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="/about" class="btn btn--green">Learn more <i class="fa-solid fa-chevron-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="home-about background--green">
-  <div class="grid">
-    <div class="home-about__image grid__item grid__item--md-6">
-    </div>
-    <div
-      class="home-about__content grid__item grid__item--md-6 content-box u-pv content-box--narrow content-box--narrow--half">
-      <h2 class="heading-secondary">Representing Ward 7,<br>Saint
-        Paul's East Side</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quas tenetur qui voluptatem voluptatum
-        commodi ad est. Unde quo reprehenderit modi repudiandae provident labore delectus consequatur quia omnis
-        similique. Ipsa.</p>
-      <a href="#" class="btn btn--white">Learn More</a>
-    </div>
-  </div>
-</section>
 
-<section class="home-vision background--grey">
-  <div class="home-vision__main grid">
-    <div
-      class="home-vision__content grid__item grid__item--md-6 content-box content-box--narrow content-box--narrow--half u-pv">
-      <h2 class="heading-secondary">Jane's vision</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quas tenetur qui voluptatem voluptatum
-        commodi ad est. Unde quo reprehenderit modi repudiandae provident labore delectus consequatur quia omnis
-        similique. Ipsa.</p>
-      <a href="#" class="btn btn--green">Learn More</a>
-    </div>
-    <div class="home-vision__image grid__item grid__item--md-6">
-
-    </div>
-  </div>
-</section>
 
 <section class="home-feed page-section background--white">
   <div class="wrapper grid grid--gap-h">
@@ -79,8 +44,8 @@
 
       <?php
       $homepagePosts = new WP_Query([
-        'posts_per_page' => 3,
-        'category_name' => 'home-page'
+        'post_type' => 'post', // Fetch blog posts
+        'posts_per_page' => 10 // Number of posts to display
       ]);
 
       while ($homepagePosts->have_posts()) {

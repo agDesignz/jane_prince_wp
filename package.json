@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "wp-scripts build",
-    "start": "wp-scripts start"
+    "start": "wp-scripts start",
+    "dev": "wp-scripts start"
   },
   "author": "Alex Geer",
   "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
-    "@wordpress/scripts": "^25.4.0",
-    "npm-run-all": "^4.1.5"
+    "@wordpress/scripts": "27.9.0"
   }
 }
