@@ -13,11 +13,11 @@ while(have_posts()) {
   </div>
   <div class="page-top__content wrapper--medium">
     <figure class="page-top__figure">
-      <img src="<?php echo esc_url(get_theme_image_url('jane-housing-2.jpg')); ?>" alt="Jane being inspiring">
+      <img src="<?php echo esc_url(get_theme_image_url('jane-housing-2-768x768.jpg')); ?>" alt="Jane being inspiring">
     </figure>
     <div class="page-top__text">
       <h2 class="page-top__heading"><?php the_title();?></h2>
-      <h3 class="page-top__subheading heading-tertiary">Years of service to the community</h3>
+      <h3 class="page-top__subheading heading-tertiary">Getting things done by working with the community</h3>
     </div>
   </div>
 
@@ -36,11 +36,17 @@ while(have_posts()) {
     ]);
 
     while($accomplishmentPosts->have_posts()) {
-      $accomplishmentPosts->the_post(); ?>
+      $accomplishmentPosts->the_post(); 
+      if (has_post_thumbnail()) {
+        $imgUrl = esc_url(get_the_post_thumbnail_url());
+      } else {
+        $imgUrl = esc_url(get_template_directory_uri() . '/assets/images/jane-housing-2-768x768.jpg');
+      }
+      ?>
 
     <div class="post-box">
       <figure class="post-box__image">
-        <?php the_post_thumbnail(); ?>
+      <img src="<?php echo $imgUrl; ?>">
       </figure>
       <div class="post-box__text">
         <h2 class="post-box__title"><?php the_title();?></h2>
@@ -56,7 +62,7 @@ while(have_posts()) {
               ?>
         </div>
         <div class="post-box__button">
-          <a href="<?php the_permalink(); ?>" class="btn btn--text btn--text--white">Read More</a>
+          <a href="<?php the_permalink(); ?>" class="btn btn--green">Read More</a>
         </div>
       </div>
     </div>

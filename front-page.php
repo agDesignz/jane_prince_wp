@@ -45,28 +45,32 @@
       <?php
       $homepagePosts = new WP_Query([
         'post_type' => 'post', // Fetch blog posts
-        'posts_per_page' => 10 // Number of posts to display
+        // 'posts_per_page' => 15 // Number of posts to display
       ]);
 
       while ($homepagePosts->have_posts()) {
         $homepagePosts->the_post();
+
+        if (has_post_thumbnail()) {
+          $imgUrl = esc_url(get_the_post_thumbnail_url());
+        } else {
+          $imgUrl = esc_url(get_template_directory_uri() . '/assets/images/jane-speech.jpg'); // Update the path as needed
+        }
     ?>
 
-      <a href="<?php the_permalink(); ?>" class="box-link">
-        <div class="box-link__container" style="background: url(<?php the_post_thumbnail_url(); ?>)">
-          <div class="box-link__bg">
-              <h3 class="box-link__title"><?php the_title(); ?></h3>
+<div class="box-link__container">
+  
+          <a href="<?php the_permalink(); ?>" class="box-link__link" style="background-image: url(<?php echo $imgUrl; ?>)">
               <div class="box-link__excerpt">
                     <?php if (has_excerpt()) {
                       the_excerpt();
                     } else {
                       ?><p class="box-link__text"><?php echo wp_trim_words(get_the_content(), 40);?></p><?php
                     }?>
-                <h4 class="box-link__tag">Read More</h4>
               </div>
-          </div>
+            </a>
+          <h3 class="box-link__title"><?php the_title(); ?></h3>
         </div>
-      </a>
 
       <?php } wp_reset_postdata();
          ?>

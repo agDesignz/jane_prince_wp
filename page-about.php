@@ -11,7 +11,7 @@ get_header();
   </div>
   <div class="page-top__content wrapper--medium">
     <figure class="page-top__figure">
-      <img src="<?php echo esc_url(get_theme_image_url('jane-tree.jpg')); ?>"
+      <img src="<?php echo esc_url(get_theme_image_url('jane-firefighters-2.jpg')); ?>"
         alt="Jane embracing her inner environmentalist">
     </figure>
     <div class="page-top__text">
