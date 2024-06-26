@@ -220,47 +220,41 @@ p {
   font-weight: 500;
 }
 
-.box-link, .box-link:link, .box-link:visited {
+.box-link__link, .box-link__link:link, .box-link__link:visited {
+  position: relative;
   text-decoration: none;
   color: inherit;
   width: 100%;
-}
-.box-link__container {
-  height: 100%;
-  min-height: 40rem;
+  min-height: 30rem;
   width: 100%;
-  max-width: 55rem;
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   background-position: center;
   background-size: cover;
+}
+.box-link__container {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  gap: 1.5rem;
+  align-items: center;
 }
-.box-link__bg {
+.box-link__excerpt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 100%;
   width: 100%;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem;
   background: linear-gradient(to top right, rgba(36, 36, 36, 0.9), rgba(36, 36, 36, 0.75));
   color: #ffffff;
   transition: all 0.24s ease-out;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  opacity: 0;
 }
-@media (min-width: 56.25em) {
-  .box-link__bg {
-    /* 900px */
-    transition: transform 0.5s;
-    transform: translateY(73%);
-  }
-}
-.box-link__excerpt {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.box-link__excerpt:hover {
+  opacity: 1;
 }
 .box-link__title {
   font-size: 2rem;
@@ -542,8 +536,6 @@ p {
   }
 }
 .home-about__image {
-  background: url(https://janeprince.local/wp-content/uploads/2023/09/jane-2-lg.jpg) no-repeat center 30%;
-  background-size: cover;
   min-height: 40rem;
 }
 @media (min-width: 37.5em) {
@@ -628,8 +620,7 @@ p {
   padding: 4vh 0;
   z-index: 10;
   color: #ffffff;
-  background: #232f67;
-  background: linear-gradient(0deg, #232f67 0%, rgba(35, 47, 103, 0.84) 30%, rgba(62, 74, 130, 0.1) 100%);
+  background: linear-gradient(45deg, #232f67, #3e4a82);
 }
 @media (min-width: 37.5em) {
   .home-top__content {
@@ -637,7 +628,6 @@ p {
     grid-column: 1/span 1;
     grid-row: 1/span 1;
     align-items: center;
-    background: linear-gradient(45deg, #232f67, #3e4a82);
   }
 }
 .home-top__subtitle {
@@ -978,13 +968,13 @@ p {
 }
 
 .page-section {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 @media (min-width: 56.25em) {
   .page-section {
     /* 900px */
-    padding: 15rem 0;
+    padding: 10rem 0;
   }
 }
 .page-section--no-padding {

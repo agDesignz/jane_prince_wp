@@ -2,6 +2,12 @@
 get_header();
 while(have_posts()) {
   the_post();
+
+  if (has_post_thumbnail()) {
+    $imgUrl = esc_url(get_the_post_thumbnail_url());
+  } else {
+    $imgUrl = esc_url(get_template_directory_uri() . '/assets/images/jane-speech.jpg'); // Update the path as needed
+  }
 ?>
 
 <div class="page-top">
@@ -10,7 +16,7 @@ while(have_posts()) {
   </div>
   <div class="page-top__content wrapper--medium">
     <figure class="page-top__figure">
-      <?php the_post_thumbnail(); ?>
+    <img class="home-top__img" src="<?php echo $imgUrl; ?>">
     </figure>
     <div class="page-top__text">
       <h2 class="heading-secondary"><?php the_title();?></h2>
