@@ -17,10 +17,6 @@
     padding: 0 4%;
     height: 100%;
 
-    @include m.bp-sm {
-      background: none;
-    }
-
     &--fixed {
       position: fixed;
       height: 6.5rem;
