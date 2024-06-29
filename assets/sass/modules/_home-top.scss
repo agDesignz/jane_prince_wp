@@ -2,41 +2,38 @@
 @use "../base/mixins" as m;
 
 .home-top {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-
-  @include m.bp-sm {
-    height: auto;
-  }
-
   &__container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
     height: 100vh;
+    position: relative;
 
     @include m.bp-sm {
-      grid-template-columns: 1fr 1fr;
-      // height: 100vh;
+      @media (orientation: landscape) {
+        flex-direction: row;
+      }
     }
   }
 
   &__content {
-    grid-column: 1 / -1;
-    grid-row: 2 / -1;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     padding: 4vh 0;
     z-index: 10;
     color: v.$color-white;
-    background: v.$bg-primary;
+    background: v.$bg-primary-rad-tr;
+    // position: absolute;
+    bottom: 0;
+    width: 100%;
 
     @include m.bp-sm {
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 1;
       align-items: center;
+      @media (orientation: landscape) {
+        flex: 1;
+        position: relative;
+        background: v.$bg-primary;
+      }
     }
   }
 
@@ -56,15 +53,14 @@
   }
 
   &__portrait {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-    // background: url(./assets/images/jane-portrait--md.jpg) no-repeat center top;
     background-size: cover;
+    flex: 2;
 
     @include m.bp-sm {
-      grid-column: 2 / span 1;
-      grid-row: 1 / span 1;
       background: v.$color-primary-dark;
+      @media (orientation: landscape) {
+        flex: 1;
+      }
     }
   }
 
