@@ -12,15 +12,14 @@
 
   <div class="home-top__portrait">
     <figure class="home-top__fig">
-      <picture>
+      <!-- <picture> -->
         <!-- <source srcset="assets/images/jane-portrait--lg.jpg" media="(min-width: 600px)"> -->
-        <img class="home-top__img" src="<?php echo esc_url(get_theme_image_url('jane-portrait-lg-cropped.jpg')); ?>" alt="Portrait of Jane Prince">
-      </picture>
+        <img class="home-top__img" src="<?php echo esc_url(get_theme_image_url('jane-headshot.jpg')); ?>" alt="Portrait of Jane Prince">
+      <!-- </picture> -->
     </figure>
   </div>
 
 </div>
-</header>
 
 <section class="page-section page-section--top-padding background--white">
   <div class="grid">

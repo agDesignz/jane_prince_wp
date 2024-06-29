@@ -13,7 +13,7 @@ while(have_posts()) {
   </div>
   <div class="page-top__content wrapper--medium">
     <figure class="page-top__figure">
-      <img src="<?php echo esc_url(get_theme_image_url('jane-housing-2-768x768.jpg')); ?>" alt="Jane being inspiring">
+      <img src="<?php echo esc_url(get_theme_image_url('jane-housing-2.jpg')); ?>" alt="Jane being inspiring">
     </figure>
     <div class="page-top__text">
       <h2 class="page-top__heading"><?php the_title();?></h2>
@@ -40,7 +40,7 @@ while(have_posts()) {
       if (has_post_thumbnail()) {
         $imgUrl = esc_url(get_the_post_thumbnail_url());
       } else {
-        $imgUrl = esc_url(get_template_directory_uri() . '/assets/images/jane-housing-2-768x768.jpg');
+        $imgUrl = esc_url(get_template_directory_uri() . '/assets/images/jane-housing-2.jpg');
       }
       ?>
 
